@@ -1,5 +1,5 @@
-/* Aula 1 sobre recursividade
- * Aula 2 sobre objeto global e process
+/* Aula 1 - sobre recursividade
+ * Aula 2 - sobre objeto global e process
  * 
  */
 
