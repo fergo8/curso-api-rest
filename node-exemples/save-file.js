@@ -1,6 +1,4 @@
-/* Aula 3 - sobre módulos node
- * 
- */
+// Aula 3 - sobre módulos node
 
 const fs = require("fs")
 
