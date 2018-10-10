@@ -2,8 +2,10 @@
  * Aula 5 - sobre npm e módulo yargs
  */
 
-const fs = require("fs")
-const argv = require("yargs")
+import * as fs from "fs"
+import * as yargs from "yargs"
+
+const argv = yargs
             .alias("f", "filename")     // cria o alias "f" para o parâmetro "filename"
             .alias("c", "content")      // cria o alias "c" para o parâmetro "content"
             .demandOption("filename")   // cria o parâmetro "filename" na constante "argv"

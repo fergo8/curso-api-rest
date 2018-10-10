@@ -1,10 +1,12 @@
 /* Aula 1 - sobre recursividade
  * Aula 2 - sobre objeto global e process
  * Aula 5 - sobre npm e módulo yargs
+ * Aula 6 - sobre typescript e tsc (compiller)
  */
 
-const fatorial = require("./fatorial")
-const argv = require("yargs").demandOption("num").argv
+import {fatorial} from "./fatorial"
+import * as yargs from "yargs";
+const argv = yargs.demandOption("num").argv
 
 console.log("n-fatorial")
 // console.log(`Caminho: ${process.cwd()}`)  // process.cwd() mostra o caminho do diretório atual
