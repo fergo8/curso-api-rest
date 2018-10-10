@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",     // repositório de arquivos .js pós compilação
+    "target": "es6",
+    "module": "commonjs"
+  }
+}
