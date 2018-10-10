@@ -1,0 +1,14 @@
+{
+  "name": "exemples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jefferson Gomes",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^12.0.2"
+  }
+}

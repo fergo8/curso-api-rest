@@ -8,3 +8,4 @@ Repositório para estudos relativo a APIs REST
 * Aula 2 - sobre objeto global e process
 * Aula 3 - sobre módulos node
 * Aula 4 - sobre export e require
+* Aula 5 - sobre npm e módulo yargs
