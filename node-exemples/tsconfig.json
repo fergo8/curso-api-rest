@@ -1,7 +1,10 @@
+// Aula 7 - sobre configuração no sourceMap
+
 {
   "compilerOptions": {
     "outDir": "dist",     // repositório de arquivos .js pós compilação
     "target": "es6",
-    "module": "commonjs"
+    "module": "commonjs",
+    "sourceMap": true     // mapeia arquivos javascript, integrando-os com typescript originais
   }
 }
