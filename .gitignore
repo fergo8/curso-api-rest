@@ -1,2 +1,5 @@
 node-exemples/node_modules
-dist/
+meat-app/node_modules
+
+node-exemples/dist
+meat-app/dist
