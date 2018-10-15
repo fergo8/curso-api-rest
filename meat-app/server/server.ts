@@ -1,4 +1,5 @@
 import * as restify from "restify"
+import {environment} from "../common/environment"
 
 export class Server {
 
@@ -37,7 +38,7 @@ export class Server {
                 })
 
                 // registering listener
-                this.application.listen(3000, () => {
+                this.application.listen(environment.server.port, () => {
                     resolve(this.application)
                 })
 
