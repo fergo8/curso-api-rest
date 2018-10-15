@@ -1,11 +1,12 @@
 import * as restify from "restify"
 import {environment} from "../common/environment"
+import {Router} from "../common/router"
 
 export class Server {
 
     application: restify.Server
 
-    initRoutes(): Promise<any>{
+    initRoutes(routers: Router[]): Promise<any>{
         return new Promise((resolve, reject) => {
             try {
 
@@ -19,6 +20,11 @@ export class Server {
                 this.application.use(restify.plugins.queryParser())
 
                 // creating route
+                for (let router of routers) {
+                    router.applyRoutes(this.application)
+                }
+
+                /*
                 this.application.get("/hello", (req, res, next) => {
                     // res.contentType = 'application/json'                 // configurando header contentType
                     // res.setHeader("Content-Type", "application/json")    // outra maneira de setar header
@@ -28,7 +34,7 @@ export class Server {
 
                 this.application.get("/info", [
                     (req, res, next) => {
-                        if(req.userAgent() && req.userAgent().includes("MSIE 7.0")){
+                        if (req.userAgent() && req.userAgent().includes("MSIE 7.0")) {
                             let error: any = new Error()
                             error.statusCode = 400
                             error.message = "Please, update your browser"
@@ -47,6 +53,7 @@ export class Server {
                         return next()
                     }
                 ])
+                */
 
                 // registering listener
                 this.application.listen(environment.server.port, () => {
@@ -59,7 +66,7 @@ export class Server {
         })
     }
 
-    bootstrap(): Promise<Server>{
-        return this.initRoutes().then(() => this)
+    bootstrap(routers: Router[] = []): Promise<Server>{
+        return this.initRoutes(routers).then(() => this)
     }
 }
