@@ -26,16 +26,27 @@ export class Server {
                     return next()
                 })
 
-                this.application.get("/info", (req, res, next) => {
-                    res.json({
-                        browser: req.userAgent(),
-                        method: req.method,
-                        url: req.url,
-                        path: req.path(),
-                        query: req.query
-                    })
-                    return next()
-                })
+                this.application.get("/info", [
+                    (req, res, next) => {
+                        if(req.userAgent() && req.userAgent().includes("MSIE 7.0")){
+                            let error: any = new Error()
+                            error.statusCode = 400
+                            error.message = "Please, update your browser"
+                            return next(error)
+                        }
+                        return next()
+                    },
+                    (req, res, next) => {
+                        res.json({
+                            browser: req.userAgent(),
+                            method: req.method,
+                            url: req.url,
+                            path: req.path(),
+                            query: req.query
+                        })
+                        return next()
+                    }
+                ])
 
                 // registering listener
                 this.application.listen(environment.server.port, () => {
