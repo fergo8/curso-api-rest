@@ -1,10 +1,21 @@
 const users = [
-    { name: "Andie", email: "chuchu@andie.com" },
-    { name: "Samuélico", email: "chuchu@samuelico.com" }
+    { id: "1", name: "Andie", email: "chuchu@andie.com" },
+    { id: "2", name: "Samuélico", email: "chuchu@samuelico.com" }
 ]
 
 export class User {
     static findAll(): Promise<any[]>{
         return Promise.resolve(users)
+    }
+
+    static findById(id: string): Promise<any>{
+        return new Promise(resolve => {
+            const filtered = users.filter(user => user.id === id)
+            let user = undefined
+            if(filtered.length > 0){
+                user = filtered[0]
+            }
+            resolve(user)
+        })
     }
 }

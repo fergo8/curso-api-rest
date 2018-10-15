@@ -27,3 +27,4 @@ Neste segundo módulo o objetivo está em iniciar o desenvolvimento de uma API c
 * Aula 3 - sobre interface de objetos (request, response, next)
 * Aula 4 - criando classe Server e code refactoring
 * Aula 5 - recuperando lista de usuários com método GET
+* Aula 6 - implementando método findById da classe User
