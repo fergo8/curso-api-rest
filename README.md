@@ -24,3 +24,4 @@ Neste segundo módulo o objetivo está em iniciar o desenvolvimento de uma API c
 
 * Aula 1 - instalando dependências
 * Aula 2 - criando primeiro app com restify
+* Aula 3 - sobre interface de objetos (request, response, next)
