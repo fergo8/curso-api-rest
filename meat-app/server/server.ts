@@ -26,6 +26,7 @@ export class Server {
 
                 // creating middleware
                 this.application.use(restify.plugins.queryParser())
+                this.application.use(restify.plugins.bodyParser())
 
                 // creating route
                 for (let router of routers) {
