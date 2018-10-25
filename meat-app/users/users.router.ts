@@ -64,6 +64,18 @@ class UsersRouter extends Router {
                 })
         })
 
+        application.del("/users/:id", (req, res, next) => {
+            User.remove({ _id: req.params.id }).exec().then(cmdResult => {
+                if(cmdResult.result.n){
+                    res.send(204)
+                }
+                else {
+                    res.send(404)
+                }
+                return next()
+            })
+        })
+
     }
 }
 
