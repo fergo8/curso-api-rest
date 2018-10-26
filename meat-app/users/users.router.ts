@@ -1,6 +1,7 @@
 import * as restify from "restify"
 import {Router} from "../common/router"
 import {User} from "./users.model"
+import { NotFoundError } from "restify-errors";
 
 class UsersRouter extends Router {
 
@@ -34,7 +35,8 @@ class UsersRouter extends Router {
                     return User.findById(req.params.id)
                 }
                 else {
-                    res.send(404)
+                    throw new NotFoundError("Document not found")
+                    
                 }
                 }).then(this.render(res, next)).catch(next)
         })
@@ -51,7 +53,7 @@ class UsersRouter extends Router {
                     res.send(204)
                 }
                 else {
-                    res.send(404)
+                    throw new NotFoundError("Document not found")
                 }
                 return next()
             }).catch(next)
