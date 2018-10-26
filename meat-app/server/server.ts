@@ -1,8 +1,9 @@
 import * as restify from "restify"
 import * as mongoose from "mongoose"
-import {environment} from "../common/environment"
-import {Router} from "../common/router"
-import {mergePatchBodyParser} from "./merge-patch.parser"
+import { environment } from "../common/environment"
+import { Router } from "../common/router"
+import { mergePatchBodyParser } from "./merge-patch.parser"
+import { handleError } from "./error.handler"
 
 export class Server {
 
@@ -35,41 +36,13 @@ export class Server {
                     router.applyRoutes(this.application)
                 }
 
-                /*
-                this.application.get("/hello", (req, res, next) => {
-                    // res.contentType = 'application/json'                 // configurando header contentType
-                    // res.setHeader("Content-Type", "application/json")    // outra maneira de setar header
-                    res.send({ msg: "hello" })                                // método send() configura header contentType automaticamente
-                    return next()
-                })
-
-                this.application.get("/info", [
-                    (req, res, next) => {
-                        if (req.userAgent() && req.userAgent().includes("MSIE 7.0")) {
-                            let error: any = new Error()
-                            error.statusCode = 400
-                            error.message = "Please, update your browser"
-                            return next(error)
-                        }
-                        return next()
-                    },
-                    (req, res, next) => {
-                        res.json({
-                            browser: req.userAgent(),
-                            method: req.method,
-                            url: req.url,
-                            path: req.path(),
-                            query: req.query
-                        })
-                        return next()
-                    }
-                ])
-                */
-
                 // registering listener
                 this.application.listen(environment.server.port, () => {
                     resolve(this.application)
                 })
+
+                // errors
+                this.application.on("restifyError", handleError)
 
             } catch(error) {
                 reject(error)

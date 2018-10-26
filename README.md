@@ -42,3 +42,11 @@ O terceiro módulo visa conectar a API ao banco de dados MongoDB através de lib
 * Aula 5 - implementando método PATCH
 * Aula 6 - implementando método DELETE
 * Aula 7 - refatoração do código
+
+## Módulo 4 - Tratamento de erros
+
+
+
+### Assuntos por aula
+
+* Aula 1 - tratando erros 400 e 500
