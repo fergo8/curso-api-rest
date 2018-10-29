@@ -50,4 +50,6 @@ O terceiro módulo visa conectar a API ao banco de dados MongoDB através de lib
 ### Assuntos por aula
 
 * Aula 1 - tratando erros 400 e 500
-* Aula 2 - gerando validador personalizado
+* Aula 2 - usando validadores padrão do Mongoose
+* Aula 3 - gerando validador personalizado
+* Aula 4 - sobre Middlewares
