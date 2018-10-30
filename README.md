@@ -43,9 +43,9 @@ O terceiro módulo visa conectar a API ao banco de dados MongoDB através de lib
 * Aula 6 - implementando método DELETE
 * Aula 7 - refatoração do código
 
-## Módulo 4 - Tratamento de erros
+## Módulo 4 - Tratamento de erros e validações
 
-
+O quarto módulo do curso aborda tratamento de erros com módulo Restify-Errors, validadores padrão e personalizados do Mongoose e segurança da informação com criptografia através do módulo Bcrypt.
 
 ### Assuntos por aula
 
@@ -54,3 +54,5 @@ O terceiro módulo visa conectar a API ao banco de dados MongoDB através de lib
 * Aula 3 - gerando validador personalizado
 * Aula 4 - Validações no método save() com Middleware
 * Aula 5 - Validações no método update() com Middleware
+
+## Módulo 5 - 
